@@ -1,4 +1,4 @@
-package com.example.dell.testloader1;
+package com.example.young.experimentloader;
 
 import android.content.Context;
 import android.content.Intent;
@@ -30,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText editText = (EditText) findViewById(R.id.editText);
+        EditText editText = (EditText) findViewById(R.id.text1);
         String Message = editText.getText().toString();
 
-        Button button = (Button) findViewById(R.id.button);
+        Button button = (Button) findViewById(R.id.button1);
 
         /*int[] location = new int[2];
         button.getLocationInWindow(location);
@@ -58,17 +58,17 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText editText = (EditText) findViewById(R.id.editText);
+                EditText editText = (EditText) findViewById(R.id.text1);
                 String Message = editText.getText().toString();
                 if(Message.contains("yyf")) {
-                        String apkPath = "/data/local/tmp" + "/bundle.apk";
-                        System.out.println("APKPATH:" + apkPath);
-                        loadApk(apkPath);
-                        Toast.makeText(MainActivity.this,apkPath,Toast.LENGTH_LONG).show();
-                    }
-                    else{
+                    String apkPath = "/data/local/tmp" + "/bundle.apk";
+                    System.out.println("APKPATH:" + apkPath);
+                    loadApk(apkPath);
+                    Toast.makeText(MainActivity.this,apkPath,Toast.LENGTH_LONG).show();
+                }
+                else{
                     Toast.makeText(MainActivity.this,"No Loading",Toast.LENGTH_LONG).show();
-                    }
+                }
             }
         });
 
@@ -103,8 +103,8 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 this.getClassLoader());
         System.out.println("apkPath:" +  apkPath);
-        appendMethod("/data/local/tmp/loadFile.txt",apkPath+"1");
-        appendMethod("/data/local/tmp/loadFile.txt",apkPath+"2");
+        //appendMethod("/data/local/tmp/loadFile.txt",apkPath+"1");
+        //appendMethod("/data/local/tmp/loadFile.txt",apkPath+"2");
         Toast.makeText(MainActivity.this, "写入完成", Toast.LENGTH_SHORT).show();
 
         Log.v("loadDexClasses", "Searching for class : "

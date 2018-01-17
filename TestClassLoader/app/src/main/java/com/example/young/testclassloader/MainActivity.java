@@ -1,7 +1,7 @@
-package com.example.dell.testmessageloader;
+package com.example.young.testclassloader;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 
 import java.io.File;
@@ -9,8 +9,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import dalvik.system.DexClassLoader;
-
-import static android.content.Context.MODE_PRIVATE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 this.getClassLoader());
 
-
         Log.v("loadDexClasses", "Searching for class : "
                 + "com.registry.Registry");
         try {
@@ -51,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (InstantiationException e) {
             e.printStackTrace();
         }
-
-
     }
+
 }
